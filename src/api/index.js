@@ -7,7 +7,7 @@
 
 export const fetchNotes = async(page = 1, limit = 5) => {
     
-    const response = await fetch(`${'http://62.72.5.95:1999/notes'}?page=${page}&limit=${limit}`)
+    const response = await fetch(`${'https://post-it.epi-bluelock.bj'}?page=${page}&limit=${limit}`)
     
     const datas = await response.json()    
     // .then(data => data.notes)
@@ -19,7 +19,7 @@ export const fetchNotes = async(page = 1, limit = 5) => {
 // SHOW ONE POSTIT
 export const fetchNote = async(noteId) => {
     
-    const response = await fetch(`http://62.72.5.95:1999/notes/${noteId}`)
+    const response = await fetch(`https://post-it.epi-bluelock.bj/${noteId}`)
     
     const data = await response.json()
 
@@ -30,7 +30,7 @@ export const fetchNote = async(noteId) => {
 // UPDATE ONE POSTIT
 export const updateNote = async(title, content, noteId) =>  {
     
-    await fetch(`http://62.72.5.95:1999/notes/${noteId}`, {
+    await fetch(`https://post-it.epi-bluelock.bj/${noteId}`, {
     
         method: 'PUT',
     
@@ -50,7 +50,7 @@ export const updateNote = async(title, content, noteId) =>  {
 // ADD A POSTIT
 export const addNote = async(title, content) => {
     
-    const response = await fetch('http://62.72.5.95:1999/notes', {
+    const response = await fetch('https://post-it.epi-bluelock.bj', {
     
         method: 'POST',
     
@@ -75,7 +75,7 @@ export const addNote = async(title, content) => {
 
 export const deleteNote = async(noteId) => {
     
-    await fetch(`http://62.72.5.95:1999/notes/${noteId}`, {
+    await fetch(`https://post-it.epi-bluelock.bj/${noteId}`, {
     
         method: 'DELETE'
     
